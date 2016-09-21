@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="18d40cc7-563d-4ea0-8e01-865327eb1ca1" featureId="18d40cc7-563d-4ea0-8e01-865327eb1ca1" imageUrl="" scope="Site" solutionId="00000000-0000-0000-0000-000000000000" title="WFCustomAction Feature" version="" deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
+  <projectItems>
+    <projectItemReference itemId="a214a8ea-c72b-4108-9374-7288f5f2745a" />
+    <projectItemReference itemId="7df6a01c-9c92-4847-829c-c24d69a781a0" />
+    <projectItemReference itemId="4e7c032e-2ddc-4e88-a711-15b2d5149618" />
+    <projectItemReference itemId="02bac92d-c7dc-4b3b-be3f-c52ac7c70ef7" />
+    <projectItemReference itemId="cd116ad8-2b6c-442a-93cd-054c81f0cbac" />
+    <projectItemReference itemId="317b3769-f26f-4955-aa81-84cadceea37f" />
+    <projectItemReference itemId="98c34648-39c8-4cd0-81a9-a5dbb2d2df43" />
+    <projectItemReference itemId="3a07870f-e02e-4adb-9e8a-a3370c6b4c22" />
+    <projectItemReference itemId="5cf22420-2efe-476d-80ac-73d66c94796d" />
+    <projectItemReference itemId="023ce767-3649-44ba-9eb7-68563e4209e4" />
+    <projectItemReference itemId="be14ea12-60f8-442c-a21f-9fca32c42158" />
+    <projectItemReference itemId="bdab4089-6213-4136-ac22-bb9d37d764a7" />
+    <projectItemReference itemId="8cee8d3e-2f94-446c-997e-b28d6825f7e8" />
+    <projectItemReference itemId="16a97efc-25c6-4297-8c7a-114bcb34d2fe" />
+    <projectItemReference itemId="63dd0af5-561e-41e6-bff1-b7da825ab7b1" />
+    <projectItemReference itemId="56f81b34-baab-4c45-99ae-503bc739f85c" />
+    <projectItemReference itemId="2765574a-d697-46d6-b204-cc39395cea0f" />
+    <projectItemReference itemId="88cd0799-05ca-42d6-8a20-b116fd6e8b14" />
+    <projectItemReference itemId="b0afba94-3970-46a8-852c-83fe501d945f" />
+    <projectItemReference itemId="25235f6f-5a34-4ec9-8942-c931d459deb9" />
+    <projectItemReference itemId="3150ddc5-bc9e-4b51-9e7b-2137ffc77c90" />
+    <projectItemReference itemId="a6f46221-f585-48e9-9816-635459d90f4f" />
+    <projectItemReference itemId="f29c0a73-aeab-4470-a946-0a4478e92567" />
+    <projectItemReference itemId="b584b43d-5857-47ac-9661-4c85dd6c0736" />
+    <projectItemReference itemId="8af452f2-9f21-4132-968b-ce827e9ff7d1" />
+    <projectItemReference itemId="eb875f52-a4f8-4cfe-8256-96199be3780f" />
+    <projectItemReference itemId="5aefe20e-90d3-4057-9f5a-96035f9f3d43" />
+    <projectItemReference itemId="b6d65198-3775-47a1-b604-9cb74d165aec" />
+    <projectItemReference itemId="e472d575-e075-4d6e-ac64-ef77278011e0" />
+    <projectItemReference itemId="c2f2032a-1366-4dfb-82f0-17b1628b54d1" />
+    <projectItemReference itemId="93a5052a-4323-4b69-b0a2-e0a633e96646" />
+    <projectItemReference itemId="504366bb-911a-44c7-8108-ed4215028d85" />
+    <projectItemReference itemId="a36f1a10-867b-4a22-b111-031b52aa57dd" />
+    <projectItemReference itemId="453a29b9-da2b-4107-8c49-12d6b4655ad5" />
+    <projectItemReference itemId="5a175a53-800d-4b67-89cc-b8dc823dc86b" />
+    <projectItemReference itemId="6c9922ba-5459-4b7b-9a2f-0b83a91bfdf9" />
+    <projectItemReference itemId="67be4bd3-fa53-45c8-b2aa-c7d24f92f561" />
+    <projectItemReference itemId="c2756b73-1244-46d8-8ec4-7155d3b451e6" />
+    <projectItemReference itemId="d38f2332-73fc-4243-a55c-ad9f393e7294" />
+    <projectItemReference itemId="a59fc2fa-997e-49c9-aeaa-a0c2248a07bf" />
+    <projectItemReference itemId="894dc883-806d-409c-927f-42136ea59a32" />
+    <projectItemReference itemId="6b61b2b9-b76f-4be7-b62a-dd171c6b8aa4" />
+    <projectItemReference itemId="84c8cf23-ee09-4483-a639-c68e29b1aa0e" />
+    <projectItemReference itemId="64322c41-7958-452f-a724-5ab1848a6a2a" />
+  </projectItems>
+</feature>

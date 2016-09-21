@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Get Approval Matrix Id"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.GetMatrixId"
+        FunctionName="GetApprovalMatrixId"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Get Approval Matrix Id for %1, %2 and %3 (result logged to %4)">
+        <FieldBind Field="region" Text="Region" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="criticality" Text="Criticality" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="confidentiality" Text="Confidentiality" Id="3"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="4"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="region"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Region" />
+        <Parameter Name="criticality"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Criticality" />
+        <Parameter Name="confidentiality"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Confidentiality" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Check OOB Breakdown"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.CheckOOBBreakdownAction"
+        FunctionName="CheckOOBBreakdown"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Check OOB Breakdown %1 of type %2 (with column name which be calculated in WF action) in list with name %3 against annual accumulated SGA amount in list %4 with annual percent %5 (result logged to %6)">
+        <FieldBind Field="breakdownValue" Text="Breakdown Value" Id="1" DesignerType="TextBox" />
+        <FieldBind Field="breakdownType" Text="Breakdown Type" Id="2" DesignerType="TextBox" />
+        <FieldBind Field="breakdownsListName" Text="Breakdowns List Name" Id="3" DesignerType="TextBox" />
+        <FieldBind Field="annualBreakdownsListName" Text="Annual Breakdowns List Name" Id="4" DesignerType="TextBox" />
+        <FieldBind Field="annualPercent" Text="Annual Percent" Id="5" DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="6" DesignerType="ParameterNames" />
+        <!--<FieldBind Field="debugInfo" Text="Debug Info" Id="8" DesignerType="ParameterNames" />-->
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In" DesignerType="Hide" />
+        <Parameter Name="breakdownValue"
+       Type="System.Double, mscorlib"
+       Direction="In"
+       DesignerType="TextBox"
+       Description="Breakdown Value" />
+        <Parameter Name="breakdownType"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Breakdown Type" />
+        <Parameter Name="breakdownsListName"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Breakdowns List Name" />
+        <Parameter Name="annualBreakdownsListName"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Annual Breakdowns List Name" />
+        <Parameter Name="annualPercent"
+       Type="System.Double, mscorlib"
+       Direction="In"
+       DesignerType="TextBox"
+       Description="Annual Percent" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+        <!--<Parameter Name="debugInfo"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Debug Info"/>-->
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

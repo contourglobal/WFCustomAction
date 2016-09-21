@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Get SM Approval Matrix Participants Count"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.GetSMApprovalMatrixParticipantsCount"
+        FunctionName="GetApprovalMatrixParticipantsCount"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Get SM Approval Matrix Participants Count for %1 and %2 (result logged to %3)">
+        <FieldBind Field="region" Text="Region" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="documentGroup" Text="Document Group" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="3"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="region"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Region" />
+        <Parameter Name="documentGroup"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Document Group" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Daily CG Debts Reminders"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.DailyCGDebtsReminders"
+        FunctionName="SendReminders"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Send daily CG Debts reminders for %1 days before. Is Dev - %2 (result logged to %3)">
+        <FieldBind Field="daysBefore" Text="Days Number" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="isDev" Text="Is Dev?" Id="2"
+            DesignerType="Bool" />
+        <FieldBind Field="result" Text="Result" Id="3"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="daysBefore"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Days before the due date" />
+        <Parameter Name="isDev"
+        Type="System.Boolean, mscorlib"
+        Direction="In"
+        Description="Is Dev" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

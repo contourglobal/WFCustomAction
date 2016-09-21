@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Update Requirement Name"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.UpdateReqName"
+        FunctionName="UpdateRequirementName"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Update requirement name in histories (result logged to %1)">
+        <FieldBind Field="result" Text="Result" Id="1"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

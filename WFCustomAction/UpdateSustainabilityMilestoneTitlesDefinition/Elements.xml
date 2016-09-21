@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Update Sustainability Milestone Titles"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.UpdateMilestoneTitles"
+        FunctionName="UpdateSustainabilityMilestoneTitles"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Update milestones for %1 from %2 to %3 (result logged to %4)">
+        <FieldBind Field="id" Text="Current Item Id" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="sourceList" Text="Source List" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="targetList" Text="Target List" Id="3"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="4"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="id"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Id of current item" />
+        <Parameter Name="sourceList"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Name of the source list" />
+        <Parameter Name="targetList"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Name of the target list" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Completion Status"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

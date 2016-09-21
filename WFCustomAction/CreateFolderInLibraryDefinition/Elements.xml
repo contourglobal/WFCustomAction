@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Create Folder in Library"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.CreateFolderInLibraryAction"
+        FunctionName="CreateFolderInLibrary"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Create folder with name %1 in library with name %2 in this path %3 (result logged to %4 new folder url to %5)">
+        <FieldBind Field="folderName" Text="Folder Name" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="libraryName" Text="Library Name" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="folderPath" Text="Folder Path" Id="3"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="4"
+            DesignerType="ParameterNames" />
+        <FieldBind Field="folderUrl" Text="Folder Url" Id="5"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="folderName"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Folder Name" />
+        <Parameter Name="libraryName"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Library Name" />
+        <Parameter Name="folderPath"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Folder Path" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+        <Parameter Name="folderUrl"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Folder Url"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

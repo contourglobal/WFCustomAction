@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D89CADE-9AF8-43CD-A644-B8851BDA7984}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WFCustomAction</RootNamespace>
+    <AssemblyName>WFCustomAction</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Activities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.DesignTime.Activities, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppraisalForm.cs" />
+    <Compile Include="CheckCompletionStatus.cs" />
+    <Compile Include="CheckDoubledTasks.cs" />
+    <Compile Include="CheckReqReady.cs" />
+    <Compile Include="CheckIfStringContainsOtherString.cs" />
+    <Compile Include="CheckOOBBreakdown.cs" />
+    <Compile Include="CreateFolderInLibraryAction.cs" />
+    <Compile Include="DeleteAllAttachments.cs" />
+    <Compile Include="GetOOBColumnValueByIdentifier.cs" />
+    <Compile Include="GetBOICRDeadlineCategoryDatesId.cs" />
+    <Compile Include="GetBOICRAccessRightsMatrixId.cs" />
+    <Compile Include="MoveInsAttachments.cs" />
+    <Compile Include="UpdateAllItems.cs" />
+    <Compile Include="UpdateSustainabilityMilestoneTitles.cs" />
+    <Compile Include="GetSMApprovalMatrixParticipantsCount.cs" />
+    <Compile Include="GetSMApprovalMatrixId.cs" />
+    <Compile Include="GetAssistantEmailsOfSignatories.cs" />
+    <Compile Include="DailyCGDebtsReminders.cs" />
+    <Compile Include="DailyUpdateComplianceStatus.cs" />
+    <Compile Include="DeleteAllItems.cs" />
+    <Compile Include="DeleteLastHistory.cs" />
+    <Compile Include="EmailsToContributors.cs" />
+    <Compile Include="GetFinalEmailDataAfterReassign.cs" />
+    <Compile Include="GetHistoryAttachment.cs" />
+    <Compile Include="GetMatrixId.cs" />
+    <Compile Include="GetMatrixRole.cs" />
+    <Compile Include="GetStatusById.cs" />
+    <Compile Include="MakeHistory.cs" />
+    <Compile Include="MoveAttachments.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RejectProcess.cs" />
+    <Compile Include="RevertReqPermissions.cs" />
+    <Compile Include="SetFinalStatus.cs" />
+    <Compile Include="SetFullPermissionsQoBC.cs" />
+    <Compile Include="SetManagers.cs" />
+    <Compile Include="SetPermissions.cs" />
+    <Compile Include="SetPermissionsWhenReassignTask.cs" />
+    <Compile Include="SetTextForBody.cs" />
+    <Compile Include="UpdateActionTitles.cs" />
+    <Compile Include="UpdateCompletionStatus.cs" />
+    <Compile Include="UpdateManagers.cs" />
+    <Compile Include="UpdatePermissions.cs" />
+    <Compile Include="UpdatePermissionsInAmortizationSchedules.cs" />
+    <Compile Include="UpdatePermissionsInCGPR.cs" />
+    <Compile Include="UpdateReqName.cs" />
+    <Compile Include="Utils\SPListHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppraisalForm\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cd116ad8-2b6c-442a-93cd-054c81f0cbac}</SharePointProjectItemId>
+    </None>
+    <None Include="CheckCompletionStatusDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{02bac92d-c7dc-4b3b-be3f-c52ac7c70ef7}</SharePointProjectItemId>
+    </None>
+    <None Include="CheckDoubledTasksDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f29c0a73-aeab-4470-a946-0a4478e92567}</SharePointProjectItemId>
+    </None>
+    <None Include="CheckReqReadyDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3150ddc5-bc9e-4b51-9e7b-2137ffc77c90}</SharePointProjectItemId>
+    </None>
+    <None Include="CheckIfStringContainsOtherStringDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6c9922ba-5459-4b7b-9a2f-0b83a91bfdf9}</SharePointProjectItemId>
+    </None>
+    <None Include="CheckOOBBreakdownDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{67be4bd3-fa53-45c8-b2aa-c7d24f92f561}</SharePointProjectItemId>
+    </None>
+    <None Include="CreateFolderInLibraryDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{64322c41-7958-452f-a724-5ab1848a6a2a}</SharePointProjectItemId>
+    </None>
+    <None Include="DeleteAllAttachmentsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6b61b2b9-b76f-4be7-b62a-dd171c6b8aa4}</SharePointProjectItemId>
+    </None>
+    <None Include="GetOOBColumnValueByIdentifierDefinition\SharePointProjectItem.spdata">
+      <SubType>Designer</SubType>
+      <SharePointProjectItemId>{894dc883-806d-409c-927f-42136ea59a32}</SharePointProjectItemId>
+    </None>
+    <None Include="GetBOICRDeadlineCategoryDatesIdDefinition\SharePointProjectItem.spdata">
+      <SubType>Designer</SubType>
+      <SharePointProjectItemId>{a59fc2fa-997e-49c9-aeaa-a0c2248a07bf}</SharePointProjectItemId>
+    </None>
+    <None Include="GetBOICRAccessRightsMatrixIdDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d38f2332-73fc-4243-a55c-ad9f393e7294}</SharePointProjectItemId>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MoveInsAttachmentsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c2756b73-1244-46d8-8ec4-7155d3b451e6}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdateAllItemsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{84c8cf23-ee09-4483-a639-c68e29b1aa0e}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdateSustainabilityMilestoneTitlesDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5a175a53-800d-4b67-89cc-b8dc823dc86b}</SharePointProjectItemId>
+    </None>
+    <None Include="GetSMApprovalMatrixParticipantsCountDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{453a29b9-da2b-4107-8c49-12d6b4655ad5}</SharePointProjectItemId>
+    </None>
+    <None Include="GetSMApprovalMatrixIdDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a36f1a10-867b-4a22-b111-031b52aa57dd}</SharePointProjectItemId>
+    </None>
+    <None Include="DailyCGDebtsRemindersDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{56f81b34-baab-4c45-99ae-503bc739f85c}</SharePointProjectItemId>
+    </None>
+    <None Include="DailyUpdateComplianceStatusDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{16a97efc-25c6-4297-8c7a-114bcb34d2fe}</SharePointProjectItemId>
+    </None>
+    <None Include="DeleteAllItemsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{88cd0799-05ca-42d6-8a20-b116fd6e8b14}</SharePointProjectItemId>
+    </None>
+    <None Include="DeleteLastHistoryDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7df6a01c-9c92-4847-829c-c24d69a781a0}</SharePointProjectItemId>
+    </None>
+    <None Include="EmailsToContributorsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{25235f6f-5a34-4ec9-8942-c931d459deb9}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\WFCustomActionFeature\WFCustomActionFeature.feature">
+      <FeatureId>{e12e19a6-9557-4b69-8e0d-b2ea8292de34}</FeatureId>
+    </None>
+    <None Include="GetEmailDataAfterReassignDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c2f2032a-1366-4dfb-82f0-17b1628b54d1}</SharePointProjectItemId>
+    </None>
+    <None Include="GetEmailOfSignatoryAssistantDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b6d65198-3775-47a1-b604-9cb74d165aec}</SharePointProjectItemId>
+    </None>
+    <None Include="GetHistoryAttachmentDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{504366bb-911a-44c7-8108-ed4215028d85}</SharePointProjectItemId>
+    </None>
+    <None Include="GetMatrixIdDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a6f46221-f585-48e9-9816-635459d90f4f}</SharePointProjectItemId>
+    </None>
+    <None Include="GetMatrixRoleDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b584b43d-5857-47ac-9661-4c85dd6c0736}</SharePointProjectItemId>
+    </None>
+    <None Include="GetStatusByIdDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{be14ea12-60f8-442c-a21f-9fca32c42158}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="MakeHistoryDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4e7c032e-2ddc-4e88-a711-15b2d5149618}</SharePointProjectItemId>
+    </None>
+    <None Include="MoveAttachmentsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a214a8ea-c72b-4108-9374-7288f5f2745a}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{c2e31627-dfd5-4cce-a104-0521f0589d78}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="QuestionsOnBondCovenantsFullPermissionsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{63dd0af5-561e-41e6-bff1-b7da825ab7b1}</SharePointProjectItemId>
+    </None>
+    <None Include="RejectProcessDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{93a5052a-4323-4b69-b0a2-e0a633e96646}</SharePointProjectItemId>
+    </None>
+    <None Include="RevertReqPermissionsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2765574a-d697-46d6-b204-cc39395cea0f}</SharePointProjectItemId>
+    </None>
+    <None Include="SetFinalStatusDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e472d575-e075-4d6e-ac64-ef77278011e0}</SharePointProjectItemId>
+    </None>
+    <None Include="SetManagersDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8cee8d3e-2f94-446c-997e-b28d6825f7e8}</SharePointProjectItemId>
+    </None>
+    <None Include="SetPermissionsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5cf22420-2efe-476d-80ac-73d66c94796d}</SharePointProjectItemId>
+    </None>
+    <None Include="SetPermissionsWhenReassignTaskDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5aefe20e-90d3-4057-9f5a-96035f9f3d43}</SharePointProjectItemId>
+    </None>
+    <None Include="SetTextForBodyDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{023ce767-3649-44ba-9eb7-68563e4209e4}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdateActionTitlesDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{317b3769-f26f-4955-aa81-84cadceea37f}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdateCompletionStatusDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bdab4089-6213-4136-ac22-bb9d37d764a7}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdateManagersDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{98c34648-39c8-4cd0-81a9-a5dbb2d2df43}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdatePermissionsDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3a07870f-e02e-4adb-9e8a-a3370c6b4c22}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdatePermissionsInAmortizationSchedulesDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{eb875f52-a4f8-4cfe-8256-96199be3780f}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdatePermissionsInCGPRDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8af452f2-9f21-4132-968b-ce827e9ff7d1}</SharePointProjectItemId>
+    </None>
+    <None Include="UpdateReqNameDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b0afba94-3970-46a8-852c-83fe501d945f}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AppraisalForm\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CheckCompletionStatusDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CheckDoubledTasksDefinition\Elements.xml" />
+    <Content Include="CheckReqReadyDefinition\Elements.xml" />
+    <Content Include="CheckIfStringContainsOtherStringDefinition\Elements.xml" />
+    <Content Include="CheckOOBBreakdownDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CreateFolderInLibraryDefinition\Elements.xml" />
+    <Content Include="DeleteAllAttachmentsDefinition\Elements.xml" />
+    <Content Include="GetOOBColumnValueByIdentifierDefinition\Elements.xml" />
+    <Content Include="GetBOICRDeadlineCategoryDatesIdDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GetBOICRAccessRightsMatrixIdDefinition\Elements.xml" />
+    <Content Include="MoveInsAttachmentsDefinition\Elements.xml" />
+    <Content Include="UpdateAllItemsDefinition\Elements.xml" />
+    <Content Include="UpdateSustainabilityMilestoneTitlesDefinition\Elements.xml" />
+    <Content Include="GetSMApprovalMatrixParticipantsCountDefinition\Elements.xml" />
+    <Content Include="GetSMApprovalMatrixIdDefinition\Elements.xml" />
+    <Content Include="DailyCGDebtsRemindersDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DailyUpdateComplianceStatusDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DeleteAllItemsDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DeleteLastHistoryDefinition\Elements.xml" />
+    <Content Include="EmailsToContributorsDefinition\Elements.xml" />
+    <Content Include="Features\WFCustomActionFeature\WFCustomActionFeature.Template.xml">
+      <DependentUpon>WFCustomActionFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="GetEmailDataAfterReassignDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GetEmailOfSignatoryAssistantDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GetHistoryAttachmentDefinition\Elements.xml" />
+    <Content Include="GetMatrixIdDefinition\Elements.xml" />
+    <Content Include="GetMatrixRoleDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GetStatusByIdDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="MakeHistoryDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="MoveAttachmentsDefinition\Elements.xml" />
+    <Content Include="QuestionsOnBondCovenantsFullPermissionsDefinition\Elements.xml" />
+    <Content Include="RejectProcessDefinition\Elements.xml" />
+    <Content Include="RevertReqPermissionsDefinition\Elements.xml" />
+    <Content Include="SetFinalStatusDefinition\Elements.xml" />
+    <Content Include="SetManagersDefinition\Elements.xml" />
+    <Content Include="SetPermissionsDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SetPermissionsWhenReassignTaskDefinition\Elements.xml" />
+    <Content Include="SetTextForBodyDefinition\Elements.xml" />
+    <Content Include="UpdateActionTitlesDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="UpdateCompletionStatusDefinition\Elements.xml" />
+    <Content Include="UpdateManagersDefinition\Elements.xml" />
+    <Content Include="UpdatePermissionsDefinition\Elements.xml" />
+    <Content Include="UpdatePermissionsInAmortizationSchedulesDefinition\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="UpdatePermissionsInCGPRDefinition\Elements.xml" />
+    <Content Include="UpdateReqNameDefinition\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

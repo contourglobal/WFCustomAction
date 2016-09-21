@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Get Assistant Emails Of Signatories "
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.GetAssistantEmailsOfSignatories"
+        FunctionName="GetAssistantEmails"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Get assistant emails for signatories %1 (use Display Name) %2 (use Emails) from list %3 and set permission for row %4 from list %5 (result logged to %6)">
+        <FieldBind Field="signatories" Text="Signatories" Id="1"
+          DesignerType="TextBox" />
+        <FieldBind Field="signatoriesEmails" Text="Signatories Emails" Id="2"
+          DesignerType="TextBox" />
+        <FieldBind Field="listName" Text="List Name" Id="3"
+         DesignerType="TextBox" />
+        <FieldBind Field="id" Text="Current Item Id" Id="4"
+            DesignerType="TextBox" />
+        <FieldBind Field="sourceList" Text="Source List" Id="5"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="6"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="signatories"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Signatories" />
+        <Parameter Name="signatoriesEmails"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Signatories Emails" />
+        <Parameter Name="listName"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="List Name" />
+        <Parameter Name="id"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Current Item Id" />
+        <Parameter Name="sourceList"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Source list" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Assistant emails"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

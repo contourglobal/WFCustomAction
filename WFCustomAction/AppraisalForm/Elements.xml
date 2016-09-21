@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Set statuses on helper delay"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.AppraisalFormAction"
+        FunctionName="SetStatuesWhenHelperDelay"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Update the completed status in the appraisal form with id %1">
+        <FieldBind Field="id" Text="Id" Id="1" DesignerType="TextBox" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In" DesignerType="Hide" />
+        <Parameter Name="id" Type="System.Int32, mscorlib" Direction="In" DesignerType="TextBox" Description="Id of current item" />
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

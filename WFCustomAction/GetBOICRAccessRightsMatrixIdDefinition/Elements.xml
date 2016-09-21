@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Get BOICR Access Rights Matrix Id"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.GetBOICRAccessRightsMatrixIdAction"
+        FunctionName="GetBOICRAccessRightsMatrixId"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Get BOICR Access Rights Matrix Id for %1 and %2 (result logged to %3)">
+        <FieldBind Field="fuelType" Text="Fuel Type" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="component" Text="Component(Business/office)" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="3"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="fuelType"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Fuel Type" />
+        <Parameter Name="component"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Component(Business/office)" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Update Lookup Titles"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.UpdateTitles"
+        FunctionName="UpdateActionTitles"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Update %1 column for %2 and %3 in %4 list (result logged to %5)">
+        <FieldBind Field="lookupField" Text="lookup field" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="id" Text="Current Item Id" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="title" Text="Current Item Title" Id="3"
+            DesignerType="TextBox" />
+        <FieldBind Field="targetList" Text="Target List" Id="4"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="5"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="lookupField"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Lookup for the source list" />
+        <Parameter Name="id"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Id of current item" />
+        <Parameter Name="title"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Title of current item" />
+        <Parameter Name="targetList"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Name of the target list" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Completion Status"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

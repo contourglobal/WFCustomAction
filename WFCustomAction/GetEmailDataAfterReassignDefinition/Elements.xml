@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Get Final Email Data After Reassign"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.GetFinalEmailDataAfterReassign"
+        FunctionName="GetEmailDataWhenReassign"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Get email data for approve and reject where user is %1, Matrix Role is %2, list with managers and roles %3 (result logged to %4)">
+        <FieldBind Field="currentUser" Text="Current User" Id="1"
+          DesignerType="TextBox" />
+        <FieldBind Field="matrixRole" Text="Matrix Role" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="managers" Text="Managers" Id="3"
+          DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="4"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="currentUser"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Current User" />
+        <Parameter Name="matrixRole"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Matrix Role" />
+        <Parameter Name="managers"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Managers" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Completion Status"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

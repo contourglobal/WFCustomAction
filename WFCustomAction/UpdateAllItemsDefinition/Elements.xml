@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Update All Items"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.UpdateAllItems"
+        FunctionName="UpdateItems"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Update all items in %1 set %2 to %3 where %4 is %5 (result logged to %6)">
+        <FieldBind Field="tableName" Text="Table" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="setField" Text="Field" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="setValue" Text="Value" Id="3"
+            DesignerType="TextBox" />
+        <FieldBind Field="whereField" Text="Field" Id="4"
+            DesignerType="TextBox" />
+        <FieldBind Field="whereValue" Text="Value" Id="5"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="6"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="tableName"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Table Name" />
+        <Parameter Name="setField"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Set Field" />
+        <Parameter Name="setValue"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Set Value" />
+        <Parameter Name="whereField"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Where Field" />
+        <Parameter Name="whereValue"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Where Value" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

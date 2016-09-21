@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Move Current Attachments"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.MoveAttachments"
+        FunctionName="MoveCurrentAttachments"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Move the attachments for row %1 from %2 to %3. Is Dev - %4 (exceptions logged to %5)">
+        <FieldBind Field="id" Text="Current Item Id" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="sourceList" Text="Source List" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="targetList" Text="Target List" Id="3"
+            DesignerType="TextBox" />
+        <FieldBind Field="isDev" Text="Is Dev?" Id="4"
+            DesignerType="Bool" />
+        <FieldBind Field="exception" Text="Exception" Id="5"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="id"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Id of current item" />
+        <Parameter Name="sourceList"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Name of the source list" />
+        <Parameter Name="targetList"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Name of the target list" />
+        <Parameter Name="isDev"
+        Type="System.Boolean, mscorlib"
+        Direction="In"
+        Description="Is Dev" />
+        <Parameter Name="exception"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Exception encountered"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Get OOB column value by identifier"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.GetOOBColumnValueByIdentifierAction"
+        FunctionName="GetOOBColumnValueByIdentifier"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Get OOB column value by identifier %2 for %1 (result logged to %3 and internal name of column to %4)">
+        <FieldBind Field="itemId" Text="Item Id" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="columnIdentifier" Text="Column identifier" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="3"
+            DesignerType="ParameterNames" />
+        <FieldBind Field="internalName" Text="Result" Id="4"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="itemId"
+        Type="System.Int32, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Item Id" />
+        <Parameter Name="columnIdentifier"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Column Identifier" />
+        <Parameter Name="result"
+        Type="System.Double, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Result"/>
+        <Parameter Name="internalName"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Internal Name"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>

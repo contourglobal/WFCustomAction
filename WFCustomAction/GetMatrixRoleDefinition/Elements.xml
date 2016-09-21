@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WorkflowActions>
+    <Action Name="Get Manager Role"
+        SandboxedFunction="true"
+        Assembly="$SharePoint.Project.AssemblyFullName$"
+        ClassName="WFCustomAction.GetMatrixRole"
+        FunctionName="GetRole"
+        AppliesTo="all"
+        UsesCurrentItem="true"
+        Category="Sandboxed Workflow Actions">
+      <RuleDesigner Sentence="Get final email data for %1, %2 and %3 (result logged to %4)">
+        <FieldBind Field="managers" Text="Managers" Id="1"
+            DesignerType="TextBox" />
+        <FieldBind Field="mailData" Text="Mail data" Id="2"
+            DesignerType="TextBox" />
+        <FieldBind Field="managerName" Text="Manager Name" Id="3"
+            DesignerType="TextBox" />
+        <FieldBind Field="result" Text="Result" Id="4"
+            DesignerType="ParameterNames" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+      Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, 
+              Microsoft.SharePoint.WorkflowActions"
+        Direction="In"
+        DesignerType="Hide" />
+        <Parameter Name="managers"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Managers" />
+        <Parameter Name="mailData"
+        Type="System.String, mscorlib"
+        Direction="In"
+        DesignerType="TextBox"
+        Description="Final Mail Data" />
+        <Parameter Name="managerName"
+        Type="System.String, mscorlib"
+        Direction="In"
+        Description="Manager Name" />
+        <Parameter Name="result"
+        Type="System.String, mscorlib"
+        Direction="Out"
+        DesignerType="ParameterNames"
+        Description="Completion Status"/>
+      </Parameters>
+    </Action>
+  </WorkflowActions>
+</Elements>
